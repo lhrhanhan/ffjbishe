@@ -3,8 +3,95 @@
 	<head>
 		<meta charset="utf-8" />
 		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/index.css"/>
+		<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
 	</head>
 	<body>
+		<div class="wrap">
+			<div class="header">
+				<div class="header-left">
+					<li class="hl-nav"><img src="../logo.jpg" alt="" /></li>
+					<li class="hl-nav">首页</li>
+					<li class="hl-nav">菜谱</li>
+					<li class="hl-nav">食材</li>
+					<li class="hl-nav">美食广场</li>
+					<li class="hl-nav">美食知识</li>
+					<li class="hl-nav">搜索</li>
+					<li class="hl-nav">发布</li>
+				</div>
+				<div class="header-right">
+					<li class="hr-nav">
+						<img src="../img/index/login.png" alt="" />
+						登录
+					</li>
+					<li class="hr-nav">
+						<img src="../img/index/phone.png" alt="" />
+						手机特色美食网
+					</li>
+				</div>
+			</div>
+			<div class="content">
+				<div class="top">
+					<div class="topLeft">特色美食</div>
+					<div class="topright">
+						<li class="tr-right red">
+							每日推荐
+						</li>
+						<li class="tr-right">
+							菜谱
+						</li>
+						<li class="tr-right">
+							食材
+						</li>
+						<li class="tr-right">
+							美食专题
+						</li>
+						<li class="search">
+							<input type="text" placeholder="搜索菜谱，食材" />
+						</li>
+						<li class="btn-red">
+							<a href="##" target="_blank">+ 发布</a>
+						</li>
+					</div>
+				</div>
+				<div class="center">
+					<div class="c-title">准备一份丰盛的晚餐，为家人，也为自己</div>
+					<div class="c-img">
+						
+					</div>
+				</div>
+				<div class="bottom">
+					
+				</div>
+			</div>
+			<div class="footer"></div>
+		</div>
 		
+		<script type="text/javascript">
+			let thisdata = [{"imgUrl":"../img/index/eastnorth.jpg","title": "东北","content":"东北菜源于鲁菜，又融合了多个少数民族的特色风格，肉菜偏多，菜肴的烹饪注重口味不重造型，菜量大、口味浓、颜色重，大锅炖、熏酱、烧烤、溜炒是东北菜的主要烹饪方法。关内移民和东北少数民族原住民的融合，奠定了东北菜的风格，满清王朝的建立，又提升了东北菜的层次， 以典型独特的地方食材为基础，吸收了各种菜系技法和民族特色，最终融合一体形成了东北独特的饮食文化。"},
+			{"imgUrl":"../img/index/huabei.jpg","title": "华北","content":"华北地区民风俭朴，饮食不尚奢华，讲求的是实惠；食风庄重、大方，素有“堂堂正正不走偏锋”的评语。多数城乡一日3餐，面食为主，小麦与杂粮间吃，偶有大米；馒头、烙饼、面条、饺子、窝窝头、玉米粥等是其常餐。这里的面食卓有创造，日本汉学家早有“世界面食在中国、中国面食在华北、华北面食在山西、山西面食在太原”的美誉。它不仅有抻面、刀削面、小刀面、拨鱼面“4大名面”，不仅有形审飞腾、吉祥和乐的象生“礼馍”；而且家庭主妇都有“三百六十天、餐餐面饭不重样”的本领，京、津、鲁、豫的面制品、小吃和蒙古族的奶面制品，无不令人大块朵颐。"},
+			{"imgUrl":"../img/index/huadong.jpg","title": "华东","content":"华东居民习以大米为主食，间吃面粉，杂粮甚少，偶而食之，也是只调剂一下口味。他们擅长烹制糕、米团、糯米做的元宵独具特色。日习三餐，有时还“过中”或“宵夜”；平时大多不断荤，节假日食谱更精约，有荤有素，干稀调配。蔬果四时供应充裕，鸡鸭鱼肉每月不缺，嗜好海鲜与野味"},
+			{"imgUrl":"../img/index/huanan.jpg","title": "华南","content":"华南的饮食文化与中原各地一脉相通，历代王朝派来治闽、粤和被贬的官吏，带来古代北方的饮食文化，保留至今，成为华南各菜系的重要组成部分。更因最早与海外通商的地利之便，华南美食在菜式上中西结合，博采众长，形成了自己的独特风格，名扬海内外。"},
+			{"imgUrl":"../img/index/huazhong.jpg","title": "华中","content":"华中地区位于我国中部偏南，主要包括湖南省、湖北省、河南省，主食多为大米，部分山区兼食  番薯、木薯、蕉芋、土豆、玉米、小麦、高粱等。夏秋食鲜辣椒、豆类、瓜类、韭菜、竹笋等，荤类有猪、 牛、羊、鱼、鸡、鸭、鹅及蛋品。鄂、湘的小吃均以精巧多变取胜;壮、苗、黎、瑶、毛南、土家等族，善于  制作粉丝、糍粑和竹筒饭，京族习惯用鱼汁调羹。人们普遍喜酸，境内各族人民都喜好酸食;好辛辣，辣椒是当家菜，每菜必拌辣椒;饮酒，境内  人民素有饮酒的习性，凡婚、丧、喜庆必饮酒，逢年过节必饮酒，亲朋好友上门必饮酒。农村除猜拳 饮酒外，还流行唱酒歌敬酒的风俗。"},
+			{"imgUrl":"../img/index/gangaotai.jpg","title": "港澳台","content":"港澳台地区时至今日，饮食已由过去的简单果腹，发展到对色香味美的追求；食肆亦由朴实简陋，以至讲求装潢华丽；他们大多保留了自己民族传统饮食特色。在华人社区内，以广府人、客家人（以新界的原居民尤甚）、潮汕人、蛋家人为主。因此广府菜、客家菜、潮州菜等都被视为本地菜色。菜式由地道口味，到世界各地美食共冶一炉，足以反映港澳台地区饮食态度及生活质素的转变。"},
+			{"imgUrl":"../img/index/xibei.jpg","title": "西北","content":"西北地区名食众多，不少带有历史的烟尘，相当古老。象陕西的葫芦鸡、商芝肉、金钱发菜、带把肘子、牛羊肉泡馍、石子馍、甑糕、油泼面、《仿唐宴》和《饺子宴》；甘肃的百合鸡丝、清蒸鸽子鱼、兰州烤猪、手抓羊肉、牛肉拉面、泡儿油糕、一捆柴、高担羊肉、《巩昌十二体》和《金鲤席》；青海的虫草雪鸡、蜂尔里脊、人参羊筋、糖醋湟鱼、锅馍、甜醅、马杂碎、羊肉炒面片等，此外，这里的西凤酒、黄桂稠酒、当归酒、陇南春、伊梨特曲、枸杞酒、白葡萄酒、紫阳茶、奶茶、三炮台八宝茶、参茸茶；黑米饮料和哈密瓜汁，也都驰誉一方。"},
+			{"imgUrl":"../img/index/xinan.jpg","title": "西南","content":"这里的气候也很复杂，既有亚热带湿润季风气候，又有湿带、亚热带型湿润季风气候，有”一山分四季、十里不同天“之说。故而西南地区生机旺盛，物种奇多，历来号称“动物王国”和“植物王国”，烹调资源取用不竭。例如，重庆和四川有荣昌猪、德昌牛、建昌马、川牦牛、铜羊、麻鸭、雅鱼、岩鲤、江团、桃花米、大白豆、海椒、花椒、鲜笋、榨菜、魔芋、鱼腥草、豆瓣、豆豉和井盐;，贵州有香猪、关岭黄牛、黔西马、沿河山羊、金黄鸡、三穗鸭、香菇、竹荪、香禾、黑糯、党参、独山腌酸菜和铜仁绿粉；云南有抗浪鱼、弓鱼、裂腹鱼、螺黄、宣威火腿、香茅草、普洱茶、象牙芒果、接骨米、紫米、鸡棕、虎掌菌、玫瑰大头;菜、曲靖韭菜花和乳扇；西藏有瘦肉型猪、亚东鲑鱼、人参果（蕨麻籽）、冬虫夏草和藏红花等。这些特异的物料均是本地特异食俗的重要构成因素。"}
+			]
+			
+		
+			
+			for (i in thisdata) {
+				let add = $(`<div class="ci-box"><img src='${thisdata[i].imgUrl}'><p>${thisdata[i].title}</p><div class="moban moban${i}">${thisdata[i].content}</div></div>`)
+				
+				add.bind('mouseenter', function(){
+					$(`.moban${$(this).index()}`).fadeIn(500)
+				})
+				$('.ci-box').mouseleave(function() {
+					$(`.moban${$(this).index()}`).fadeOut(500)
+				})
+				
+				$('.c-img').append(add)
+			}
+		</script>
 	</body>
 </html>
