@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/product.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/pd.css"/>
+		<script src="../js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="header">
+				<div class="header-left">
+					<li class="hl-nav"><img src="../logo.jpg" alt="" /></li>
+					<li class="hl-nav">首页</li>
+					<li class="hl-nav">东北</li>
+					<li class="hl-nav">西北</li>
+					<li class="hl-nav">华北</li>
+					<li class="hl-nav">华中</li>
+					<li class="hl-nav">华南</li>
+					<li class="hl-nav">港澳台</li>
+					<li class="hl-nav">西南</li>
+				</div>
+				
+				<div class="header-center">
+					<input type="text" placeholder="搜索你想要的食物名称"/>
+					
+				</div>
+				<div class="bb">
+					<button class="te-btn">搜索</button>
+				</div>
+				<div class="header-right">
+					<li class="hr-nav">
+						<img src="../img/index/login.png" alt="" />
+						购物车
+					</li>
+					<li class="hr-nav">
+						<img src="../img/index/phone.png" alt="" />
+						登录
+					</li>
+				</div>
+			</div>
+		</div>
+		
+		<div class="ll">
+			<div class="s-fen">
+				<div class="attrKey">省份</div>
+			</div>	
+			<ul class="attrValues">
+				
+			</ul>
+		</div>
+		
+		<div class="qiehuan">
+			<div class="inner">
+				<ul class="sorts">
+					<li class="sort">综合排序</li>
+					<li class="sort sort-white">人气</li>
+					<li class="sort sort-white">销量</li>
+					<li class="sort sort-white">价格</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="list">
+			
+		</div>
+		
+		<script type="text/javascript">
+			var data = [{'imgUrl':'http://imgbdb2.bendibao.com/hebbdb/20151/5/201515132727231.jpg','content':'大列巴','price':'32'},
+			{'imgUrl':'http://imgbdb2.bendibao.com/hebbdb/20151/5/201515132727905.jpg','content':'哈尔滨红肠','price':'35'},
+			{'imgUrl':'http://imgbdb2.bendibao.com/hebbdb/20151/5/201515132728205.jpg','content':'马迭尔冰棍','price':'2'},
+			{'imgUrl':'https://s3.cdn.xiangha.com/zhishi/201402/181641081879.jpg/MTgweDEzMA.webp','content':'白肉血肠','price':'42'},
+			{'imgUrl':'https://s1.cdn.xiangha.com/zhishi/201402/181339112861.jpg/MTgweDEzMA.webp','content':'新兴园蒸饺','price':'34'},
+			{'imgUrl':'https://s3.cdn.xiangha.com/zhishi/201402/181345384885.jpg/MTgweDEzMA.webp','content':'什锦田鸡油','price':'21'},
+			{'imgUrl':'https://s1.cdn.xiangha.com/zhishi/201408/15173307933.jpg/MTgweDEzMA.webp','content':'黏豆包','price':'21'},
+			{'imgUrl':'https://s1.cdn.xiangha.com/zhishi/201408/151738185484.jpg/MTgweDEzMA.webp','content':'烧灯碗','price':'21'},
+			{'imgUrl':'http://www.feizui.com/d/file/techan/shenyang/9e5d4f81b6b1fd42eae90a655566cb2b.jpg','content':'沈阳回头','price':'12'},
+			{'imgUrl':'http://www.feizui.com/d/file/techan/anshan/cd1b056302885c8422fe5aea66dc1032.jpg','content':'鞍山肉枣','price':'14'},
+			{'imgUrl':'http://www.feizui.com/d/file/techan/anshan/327403a418942e3f862022733f32fba9.jpg','content':'鞍山枫叶肉干','price':'41'},
+			{'imgUrl':'http://www.feizui.com/d/file/techan/dalian/b1f7d9be8a61c6625e388520b1edea67.jpg','content':'大连湾魁蚶','price':'51'},
+			{'imgUrl':'http://www.feizui.com/d/file/techan/dalian/eac3a624604c64feb62e85a8346bc7f4.jpg','content':'大连焖子','price':'6'}
+			];
+			
+			var dataj = [{'imgUrl':'https://s3.cdn.xiangha.com/zhishi/201402/181641081879.jpg/MTgweDEzMA.webp','content':'白肉血肠','price':'42'},
+			{'imgUrl':'https://s1.cdn.xiangha.com/zhishi/201402/181339112861.jpg/MTgweDEzMA.webp','content':'新兴园蒸饺','price':'34'},
+			{'imgUrl':'https://s3.cdn.xiangha.com/zhishi/201402/181345384885.jpg/MTgweDEzMA.webp','content':'什锦田鸡油','price':'21'},
+			{'imgUrl':'https://s1.cdn.xiangha.com/zhishi/201408/15173307933.jpg/MTgweDEzMA.webp','content':'黏豆包','price':'21'},
+			{'imgUrl':'https://s1.cdn.xiangha.com/zhishi/201408/151738185484.jpg/MTgweDEzMA.webp','content':'烧灯碗','price':'21'}
+			];
+			
+			var datal = [{'imgUrl':'http://www.feizui.com/d/file/techan/shenyang/9e5d4f81b6b1fd42eae90a655566cb2b.jpg','content':'沈阳回头','price':'32'}
+			];
+			
+			
+			
+			var thisdata = [{'name':'黑龙江'},{'name':'吉林'},{'name':'辽宁'}]
+			
+			for (var a in thisdata) {
+				var one = $(`<li class="at-pr at-pr${a}">${thisdata[a].name}</li>`)
+				$('.attrValues').append(one)
+				$('.at-pr').bind('click',function(){
+					alert(`.at-pr${$(this).index()}`)
+				})
+			}
+			
+			for (var i in data) {
+				var dongtai = $(`<div class="product-list">
+					<div class="product-img"><img src='${data[i].imgUrl}'></div>
+					<div class="price">${data[i].price}</div>
+					<div class="font">${data[i].content}</div>
+				</div>`)
+				
+				$('.list').append(dongtai)
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,186 @@
+.con-img {
+	width: 418px;
+	height: 418px;
+	margin-left: 40px;
+			
+	float: left;
+}
+.con-img img {
+	width: 100%;
+	height: 100%;
+}
+
+.con {
+	overflow: hidden;
+}
+
+.con-right {
+	overflow: hidden;
+	width:492px;
+	float: left;
+	margin-left: 65px;
+	
+}
+
+.ss {
+	font-family: "microsoft yahei";
+	padding-bottom: 20px;
+    line-height: 1;
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+}
+
+.wrap {
+	margin-top: 90px;
+}
+
+.neirong {
+	background-color: rgb(229,229,229);
+	
+	font-size: 14px;
+	line-height: 34px;
+	padding: 15px;
+}
+
+.cuxiao {
+	line-height:43px;
+	color: #999;
+    font-size: 12px;
+    text-align: left;
+    float: left;
+    width: 69px;
+    margin: 0 0 0 8px;
+}
+
+.xiangxi {
+	
+}
+
+.qian {
+	vertical-align: middle;
+    font-size: 30px;
+    color: #FF0036;
+    font-weight: bolder;
+    font-family: Arial;
+    -webkit-font-smoothing: antialiased;
+	float: left;
+}
+
+.price {
+	overflow: hidden;
+}
+
+.btn {
+	margin-top: 40px;
+}
+
+.buy {
+	margin-right: 0;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    width: 180px;
+    background-color: #ffeded;
+    border: 1px solid #FF0036;
+    color: #FF0036;
+    font-family: 'Microsoft Yahei';
+    height: 40px;
+   	outline: none;
+}
+
+.car {
+	outline: none;
+	width: 180px;
+	height: 40px;
+	    background-color: #ff0036;
+    border: 1px solid #ff0036;
+    color: #fff;
+    margin-left: 10px;
+}
+
+.kouw {
+	
+}
+
+.kw-food {
+	line-height: 20px;
+	text-align: center;
+	height: 20px;
+	width: 50px;
+	display: inline-block;
+	/*background-color: rgb(220,220,220);*/
+	border: 1px solid black;
+	font-size: 14px;
+
+}
+
+.kw-food:hover {
+	
+	border:1px solid rgb(255,68,0);
+}
+
+.xi-jian {
+	display: inline-block;
+	position: relative;
+	top: 5px;
+	font-size: 26px;
+	height: 20px;
+	width: 40px;
+	text-align: center;
+}
+
+.xi-jia {
+	display: inline-block;
+position: relative;
+	top: 5px;
+	font-size: 26px;
+	height: 20px;
+	width: 40px;
+	text-align: center;
+}
+
+.xi-zhi input {
+	text-align: center;
+	border: none;
+	outline: none;
+	height: 20px;
+	width: 40px;
+}
+
+.header-center {
+	float: left;
+	font-size: 14px;
+	width: 600px;
+	text-align: right;
+}
+
+.bb {
+	position: relative;
+	top: 2px;
+}
+
+.header-center input {
+	
+	position: relative;
+	top: 2px;
+	height: 21px;
+    width: 352px;
+    padding: 5px 10px;
+   outline: none;
+   border: 1px solid rgb(255,68,0)
+}
+
+.te-btn {
+	cursor: pointer;
+    border: 0;
+    font-size: 12px;
+    float: left;
+    width: 72px;
+    height: 33px;
+    background-color: #f40;
+    color: #fff;
+    margin-left: -1px;
+    outline: none;
+   
+}

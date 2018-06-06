@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/index.css" />
+		<link rel="stylesheet" type="text/css" href="../css/pd.css" />
+		<script src="../js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="wrap">
+			<div class="header">
+				<div class="header-left">
+					<li class="hl-nav"><img src="../logo.jpg" alt="" /></li>
+					<li class="hl-nav">东北</li>
+					<li class="hl-nav">西北</li>
+					<li class="hl-nav">华北</li>
+					<li class="hl-nav">华中</li>
+					<li class="hl-nav">华南</li>
+					<li class="hl-nav">港澳台</li>
+					<li class="hl-nav">西南</li>
+				</div>
+				
+				<div class="header-center">
+					<input type="text" placeholder="搜索你想要的食物名称"/>
+					
+				</div>
+				<div class="bb">
+					<button class="te-btn">搜索</button>
+				</div>
+				
+				<div class="header-right">
+					<li class="hr-nav">
+						<img src="../img/index/login.png" alt="" /> 购物车
+					</li>
+					<li class="hr-nav">
+						<img src="../img/index/phone.png" alt="" /> 登录
+					</li>
+				</div>
+			</div>
+			
+			<div class="xiangxi">
+				
+			</div>
+			
+		</div>
+
+		<script type="text/javascript">
+			var data = {
+					'imgUrl': 'http://imgbdb2.bendibao.com/hebbdb/20151/5/201515132727231.jpg',
+					'content': '大列巴由俄罗斯传来，现已成为哈尔滨一绝，身为“哈尔滨第三怪”——“面包像锅盖”。出炉后的大列巴外皮焦脆，内瓤松软，香味独特。这种大面包为圆形，有五斤重，所以从哈尔滨带这特产礼物送人则可谓是“礼重情义更重”。',
+					'price': '32',
+					'name' : '大列巴',
+					'kouwei': [{'fdName': '麻辣'},{'fdName': '酸辣'},{'fdName': '清蒸'},{'fdName': '甜口'},{'fdName': '蒜香',}]
+				}
+			;
+			
+
+
+			var f = $(`
+					<div class="con">
+						<div class="con-img">
+							<img src="${data.imgUrl}" alt="" />
+						</div>
+						<div class="con-right">
+							<div class="con-top">
+								<p class="ss">
+									${data.name}
+								</p>
+								
+								<div class="neirong">
+									${data.content}
+								</div>
+								
+								<div class="price">
+									<div class="cuxiao">促销价</div>
+									<div class="qian">￥${data.price}</div>
+								</div>
+							</div>
+							
+							<div id="ik">
+								<span class="kw-food">麻辣</span>
+								<span class="kw-food">酸辣</span>
+							
+								<span class="kw-food">甜口</span>
+							</div>
+							
+							<div class="jiajian">
+								<span class="xi-jian">-</span>
+								<span class="xi-zhi"><input type="" value="1"/></span>
+								<span class="xi-jia">+</span>
+							</div>
+							
+							<div class="btn">
+								<button class="buy">购买</button>
+								<button class="car">购物车</button>
+							</div>
+							
+						
+						</div>
+					</div>
+				`)
+			
+			
+			
+			
+			
+			$('.xiangxi').append(f)
+			
+			$('#ik').bind(function () {
+				alert('ss')
+			})
+		</script>
+	</body>
+
+</html>
