@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/management.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/reception.css"/>
+		<script src="../js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="warp">
+			<div class="header">
+				<div class="nav">
+					欢迎来到中国特色美食管理系统
+					<img src="../img/whx.png"/>
+					<div class="ser">
+						<input type="text" placeholder="搜索"/>
+					</div>
+				</div>
+			</div>
+			<div class="content">
+				<div class="aside">
+					<li class="as-img">
+						<img src="../img/mannerimg.jpg"/>
+						
+					</li>
+					<li class="as-list">
+						<img src="../img/xitong.png"/>
+						<a href="management.html">订单管理</a>
+					</li>
+					
+					<li class="as-list fifth">
+						<img src="../img/qiantai.png"/>
+						<a href="reception.html">美食管理</a>
+					</li>
+					
+					
+				</div>
+				
+				<div class="section">
+					<div class="sec-dd">
+						Welcome,<span id="mann"><strong>系统管理员</strong></span>
+						<div class="shijian">当前时间为：</div>
+						<div class="nowtime"></div>
+						<div class="zhuxiao"><img src="../img/zhuxiao.png" alt="" /><strong>注销</strong></div>
+						<a href="resPwd.html"><div class="xgpwd">修改密码</div></a>
+					</div>
+					
+					<div class="sec-right">
+						<h2>美食管理</h2>
+						<ul>
+							<li class="sr-list">美食信息</li>
+							<li class="sr-list-last"></li>
+						</ul>
+					</div>
+				</div>
+				
+				<!--员工信息管理 html 界面包括dom操作-->
+				<div class="content-main">
+					<div class="cm-title">美食信息管理</div>
+					
+					<div class="content-active">
+						<button id="addRec">增加美食</button>
+					
+					
+					
+					</div>
+					
+					<div class="cm-table">
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;美食信息</p>
+						<div class="cmt-tbody">
+							<table id="forList" border="0" cellspacing="0" cellpadding="8">
+								<tr>
+									<th width="8%">美食ID</th>
+									<th width="7%">美食名称</th>
+									<th width="7%">美食单价</th>
+									<th width="10%" >美食信息</th>
+									<th width="10%">库存数量</th>
+									<th width="10%">归属省</th>
+									<th width="8%">归属地区</th>
+									<th width="12%">操作</th>
+								</tr>
+								
+								
+							</table>
+						</div>
+					</div>
+					
+					
+				</div>
+				
+				
+				
+			
+			
+			</div>
+			<div class="footer">
+				<div class="dis-form">
+					<p>增加美食</p>
+					<form method="get" onsubmit="return check()">
+					
+						<li class="re-df-list">
+							美食ID：<input id="re-bianhao" type="text" />
+						</li>
+						<li class="re-df-list">
+							美食名称：<input id="re-name" type="text" />
+						</li>
+						
+						<li class="re-df-list">
+							库存数量：<input id="re-pay" type="text">
+						</li>
+						
+						<li class="re-df-list">
+							美食单价：<input id="re-date" type="text">
+						</li>
+						<li class="re-df-list">
+							美食信息：<input id="re-date" type="text">
+						</li>
+						<li class="re-df-list">
+							归属地区：<select id="re-func">
+										  <option value="前台餐桌">东北</option>
+										  <option value="前台打包">西北</option>
+										  <option value="前台打菜">华南</option>
+										  、<option value="前台餐桌">华北</option>
+										  <option value="前台打包">华中</option>
+										  <option value="前台打菜">西南</option>
+										  <option value="前台餐桌">西北</option>
+										  <option value="前台打包">港澳台</option>
+									
+										  
+									</select>
+						</li>
+						<li class="re-df-list">
+							归属省份：<select id="re-sure">
+										  <option value="是">黑龙江</option>
+										  <option value="否">吉林</option>
+										  <option value="否">辽宁</option>
+									</select>
+						</li>
+						
+						<li class="sum">
+							<input id="sum" type="submit" value="提交"/>
+						</li>
+					</form>
+				</div>
+				<div class="ban"></div>
+				
+				
+				
+			
+		</div>
+		
+		
+		<script type="text/javascript">
+			// 封装的时间函数
+			 function formatDate(now) { 
+                var year=now.getFullYear(); 
+                var month=now.getMonth()+1; 
+                var date=now.getDate(); 
+                var hour=now.getHours(); 
+                var minute=now.getMinutes(); 
+                var second=now.getSeconds(); 
+                return year+"年"+month+"月"+date+"日"+" "+hour+"点"+minute+"分"; 
+            } 
+            
+            let nowTime = new Date();
+            let time =formatDate(nowTime);
+           	$('.nowtime').text(time)
+           	
+           	$('#delete').click(function(){
+           		alert('删除成功')
+           	})
+           	       	
+           	$('.ban').click(function(){
+           		$('.ban').hide()
+           		$('.dis-form').hide()
+           	})
+           	
+           	$('#addRec').click(function(){
+           		$('.ban').show()
+           		$('.dis-form').show()
+           	})
+           
+           	$('.zhuxiao').click(function () {
+           		$(location).attr('href','index.html')
+           	})
+           	
+           	var data = [{'foodID':'101','foodName':'大列巴','price':'25','starkNum':'200','province':'黑龙江','area':'东北','foodInfo':'大列巴由俄罗斯传...'},
+        	{'foodID':'102','foodName':'哈尔滨红肠','price':'35','starkNum':'100','province':'黑龙江','area':'东北','foodInfo':'哈尔滨红肠是哈尔......'},
+        	{'foodID':'103','foodName':'马迭尔冰棍','price':'2','starkNum':'210','province':'黑龙江','area':'东北','foodInfo':'马迭尔冰棍是哈尔......'}
+        	]
+           	
+         	for (var i in data) {
+         		console.log(data[i].foodID)
+         		var datalist = $(`<tr id="cmt-list">
+									<td>${data[i].foodID}</td>
+									<td>${data[i].foodName}</td>
+									<td>${data[i].price}</td>
+									<td id="info">${data[i].starkNum}</td>
+									<td>${data[i].foodInfo}</td>
+									<td>${data[i].province}</td>
+									<td>${data[i].area}</td>
+									<td><button id="delete">删除</button><button id="re-xg">修改</button></td>
+								</tr>`)
+         		
+         		$('#forList').append(datalist)
+         	}
+         	
+         	$('#delete').click(function() {
+         		
+         		$('#cmt-list').remove()
+         	})
+		</script>
+	</body>
+</html>

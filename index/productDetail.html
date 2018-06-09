@@ -41,12 +41,14 @@
 			</div>
 			
 			<div class="xiangxi">
-				
 			</div>
 			
 		</div>
 
 		<script type="text/javascript">
+			var jumpID = window.location.href.charAt(window.location.href.length-1)
+			console.log(jumpID)
+			
 			var data = {
 					'imgUrl': 'http://imgbdb2.bendibao.com/hebbdb/20151/5/201515132727231.jpg',
 					'content': '大列巴由俄罗斯传来，现已成为哈尔滨一绝，身为“哈尔滨第三怪”——“面包像锅盖”。出炉后的大列巴外皮焦脆，内瓤松软，香味独特。这种大面包为圆形，有五斤重，所以从哈尔滨带这特产礼物送人则可谓是“礼重情义更重”。',
@@ -56,8 +58,6 @@
 				}
 			;
 			
-
-
 			var f = $(`
 					<div class="con">
 						<div class="con-img">
@@ -79,16 +79,15 @@
 								</div>
 							</div>
 							
-							<div id="ik">
+							<div class="haoshiba">
 								<span class="kw-food">麻辣</span>
 								<span class="kw-food">酸辣</span>
-							
 								<span class="kw-food">甜口</span>
 							</div>
 							
 							<div class="jiajian">
 								<span class="xi-jian">-</span>
-								<span class="xi-zhi"><input type="" value="1"/></span>
+								<span class="xi-zhi">1</span>
 								<span class="xi-jia">+</span>
 							</div>
 							
@@ -102,15 +101,33 @@
 					</div>
 				`)
 			
-			
-			
-			
-			
 			$('.xiangxi').append(f)
 			
-			$('#ik').bind(function () {
-				alert('ss')
+			function jia() {
+				var num = $('.xi-zhi')
+				num.text(parseInt(num.text())+1)
+				console.log(num.text())
+			}
+			
+			function jian() {
+				var num = $('.xi-zhi')
+				
+				if (parseInt(num.text()) < 2) {
+					alert('在减就没了')
+				} else {
+					num.text(parseInt(num.text())-1)
+				}
+			}
+			
+			$('.xi-jia').click(function() {
+				jia()
 			})
+			
+			$('.xi-jian').click(function() {
+				jian()
+			})
+			
+			
 		</script>
 	</body>
 

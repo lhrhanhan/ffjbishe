@@ -67,19 +67,19 @@
 		</div>
 		
 		<script type="text/javascript">
-			var data = [{'imgUrl':'http://imgbdb2.bendibao.com/hebbdb/20151/5/201515132727231.jpg','content':'大列巴','price':'32'},
-			{'imgUrl':'http://imgbdb2.bendibao.com/hebbdb/20151/5/201515132727905.jpg','content':'哈尔滨红肠','price':'35'},
-			{'imgUrl':'http://imgbdb2.bendibao.com/hebbdb/20151/5/201515132728205.jpg','content':'马迭尔冰棍','price':'2'},
-			{'imgUrl':'https://s3.cdn.xiangha.com/zhishi/201402/181641081879.jpg/MTgweDEzMA.webp','content':'白肉血肠','price':'42'},
-			{'imgUrl':'https://s1.cdn.xiangha.com/zhishi/201402/181339112861.jpg/MTgweDEzMA.webp','content':'新兴园蒸饺','price':'34'},
-			{'imgUrl':'https://s3.cdn.xiangha.com/zhishi/201402/181345384885.jpg/MTgweDEzMA.webp','content':'什锦田鸡油','price':'21'},
-			{'imgUrl':'https://s1.cdn.xiangha.com/zhishi/201408/15173307933.jpg/MTgweDEzMA.webp','content':'黏豆包','price':'21'},
-			{'imgUrl':'https://s1.cdn.xiangha.com/zhishi/201408/151738185484.jpg/MTgweDEzMA.webp','content':'烧灯碗','price':'21'},
-			{'imgUrl':'http://www.feizui.com/d/file/techan/shenyang/9e5d4f81b6b1fd42eae90a655566cb2b.jpg','content':'沈阳回头','price':'12'},
-			{'imgUrl':'http://www.feizui.com/d/file/techan/anshan/cd1b056302885c8422fe5aea66dc1032.jpg','content':'鞍山肉枣','price':'14'},
-			{'imgUrl':'http://www.feizui.com/d/file/techan/anshan/327403a418942e3f862022733f32fba9.jpg','content':'鞍山枫叶肉干','price':'41'},
-			{'imgUrl':'http://www.feizui.com/d/file/techan/dalian/b1f7d9be8a61c6625e388520b1edea67.jpg','content':'大连湾魁蚶','price':'51'},
-			{'imgUrl':'http://www.feizui.com/d/file/techan/dalian/eac3a624604c64feb62e85a8346bc7f4.jpg','content':'大连焖子','price':'6'}
+			var data = [{'imgUrl':'http://imgbdb2.bendibao.com/hebbdb/20151/5/201515132727231.jpg','content':'大列巴','price':'32','urlID':"1"},
+			{'imgUrl':'http://imgbdb2.bendibao.com/hebbdb/20151/5/201515132727905.jpg','content':'哈尔滨红肠','price':'35','urlID':"2"},
+			{'imgUrl':'http://imgbdb2.bendibao.com/hebbdb/20151/5/201515132728205.jpg','content':'马迭尔冰棍','price':'2','urlID':"3"},
+			{'imgUrl':'https://s3.cdn.xiangha.com/zhishi/201402/181641081879.jpg/MTgweDEzMA.webp','content':'白肉血肠','price':'42','urlID':"4"},
+			{'imgUrl':'https://s1.cdn.xiangha.com/zhishi/201402/181339112861.jpg/MTgweDEzMA.webp','content':'新兴园蒸饺','price':'34','urlID':"5"},
+			{'imgUrl':'https://s3.cdn.xiangha.com/zhishi/201402/181345384885.jpg/MTgweDEzMA.webp','content':'什锦田鸡油','price':'21','urlID':"6"},
+			{'imgUrl':'https://s1.cdn.xiangha.com/zhishi/201408/15173307933.jpg/MTgweDEzMA.webp','content':'黏豆包','price':'21','urlID':"7"},
+			{'imgUrl':'https://s1.cdn.xiangha.com/zhishi/201408/151738185484.jpg/MTgweDEzMA.webp','content':'烧灯碗','price':'21','urlID':"8"},
+			{'imgUrl':'http://www.feizui.com/d/file/techan/shenyang/9e5d4f81b6b1fd42eae90a655566cb2b.jpg','content':'沈阳回头','price':'12','urlID':"9"},
+			{'imgUrl':'http://www.feizui.com/d/file/techan/anshan/cd1b056302885c8422fe5aea66dc1032.jpg','content':'鞍山肉枣','price':'14','urlID':"10"},
+			{'imgUrl':'http://www.feizui.com/d/file/techan/anshan/327403a418942e3f862022733f32fba9.jpg','content':'鞍山枫叶肉干','price':'41','urlID':"11"},
+			{'imgUrl':'http://www.feizui.com/d/file/techan/dalian/b1f7d9be8a61c6625e388520b1edea67.jpg','content':'大连湾魁蚶','price':'51','urlID':"12"},
+			{'imgUrl':'http://www.feizui.com/d/file/techan/dalian/eac3a624604c64feb62e85a8346bc7f4.jpg','content':'大连焖子','price':'6','urlID':"13"}
 			];
 			
 			var dataj = [{'imgUrl':'https://s3.cdn.xiangha.com/zhishi/201402/181641081879.jpg/MTgweDEzMA.webp','content':'白肉血肠','price':'42'},
@@ -100,9 +100,12 @@
 				var one = $(`<li class="at-pr at-pr${a}">${thisdata[a].name}</li>`)
 				$('.attrValues').append(one)
 				$('.at-pr').bind('click',function(){
-					alert(`.at-pr${$(this).index()}`)
+//					console.log(`.at-pr${$(this).index()}`)
+					
 				})
 			}
+			
+			
 			
 			for (var i in data) {
 				var dongtai = $(`<div class="product-list">
@@ -112,7 +115,17 @@
 				</div>`)
 				
 				$('.list').append(dongtai)
+				
+				$('.product-list').click(function() {
+//					$(this).index()
+					var o = data[$(this).index()].urlID
+					
+					window.location.href = 'productDetail.html?' + 'urlID' + '=' + o
+				})
 			}
+			
+			
+			
 		</script>
 	</body>
 </html>

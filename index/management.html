@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>manage</title>
+		<link rel="stylesheet" type="text/css" href="../css/management.css"/>
+		<script src="../js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="warp">
+			<div class="header">
+				<div class="nav">
+					欢迎来到中国特色美食管理系统
+					<img src="../img/whx.png"/>
+					<div class="ser">
+						<input type="text" placeholder="搜索"/>
+					</div>
+				</div>
+			</div>
+			<div class="content">
+				<div class="aside">
+					<li class="as-img">
+						<img src="../img/mannerimg.jpg"/>
+						
+					</li>
+					<li class="as-list first-as-list">
+						<img src="../img/xitong.png"/>
+						<a href="##">订单管理</a>
+					</li>
+					
+					
+					<li class="as-list">
+						<img src="../img/qiantai.png"/>
+						<a href="reception.html">美食管理</a>
+					</li>
+					
+				</div>
+				
+				<div class="section">
+					<div class="sec-dd">
+						Welcome,<span id="mann"><strong>系统管理员</strong></span>
+						<div class="shijian">当前时间为：</div>
+						<div class="nowtime"></div>
+						<div class="zhuxiao"><img src="../img/zhuxiao.png" alt="" /><strong>注销</strong></div>
+						<a href="resPwd.html"><div class="xgpwd">修改密码</div></a>
+					</div>
+					
+					<div class="sec-right">
+						<h2>订单管理</h2>
+						<ul>
+							<li class="sr-list">订单信息</li>
+							<li class="sr-list-last"></li>/
+						</ul>
+					</div>
+				</div>
+				
+				<!--员工信息管理 html 界面包括dom操作-->
+				<div class="content-main">
+					<div class="cm-title">员工信息管理</div>
+					
+					<div class="content-active">
+						<button id="addPerson">未处理订单</button>
+						<button id="searchPerson">已完成订单</button>
+					
+					</div>
+					
+					<div class="cm-table">
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;订单信息</p>
+						<div class="cmt-tbody">
+							<table id="forList" border="0" cellspacing="0" cellpadding="8">
+								<tr>
+									<th width="7%">订单号</th>
+									<th width="7%">美食ID</th>
+									<th width="15%">美食名称</th>
+									<th width="5%">姓名</th>
+									<th width="15%">电话</th>
+									<th width="12%">价格</th>
+									<th width="5%">数量</th>
+									<th width="5%">口味</th>
+									<th width="15%">地址</th>
+									<th width="12%">操作</th>
+								</tr>
+								
+								
+								
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<script type="text/javascript">
+			// 封装的时间函数
+			 function formatDate(now) { 
+                var year=now.getFullYear(); 
+                var month=now.getMonth()+1; 
+                var date=now.getDate(); 
+                var hour=now.getHours(); 
+                var minute=now.getMinutes(); 
+                var second=now.getSeconds(); 
+                return year+"年"+month+"月"+date+"日"+" "+hour+"点"+minute+"分"; 
+            } 
+            
+            let nowTime = new Date();
+            let time =formatDate(nowTime);
+           	$('.nowtime').text(time)
+           	
+           	$('#delete').click(function(){
+           		alert('删除')
+           	})
+           	
+        	var data = [{'orderNum':'501','foodID':'101','foodName':'大列巴','userName':'服服服','tel':'13535551234','price':'25','goodsNum':'1','kouwei':'麻辣','address':'	大连民族大学金石滩校区四号公寓310'},
+        	{'orderNum':'502','foodID':'102','foodName':'打几把','userName':'heshida','tel':'13535551234','price':'125','goodsNum':'1','kouwei':'香辣','address':'	大连民族大学金石滩校区二号公寓310'},
+        	{'orderNum':'501','foodID':'101','foodName':'小几把','userName':'shit','tel':'13535551234','price':'225','goodsNum':'1','kouwei':'酸辣','address':'	大连民族大学金石滩校区一号公寓310'}
+        	]
+        	
+        	for (var i in data) {
+        		
+        		var dataList = $(`<tr id="cmt-list">
+									<td id="orderNum">${data[i].orderNum}</td>
+									<td id="foodID">${data[i].foodID}</td>
+									<td id="foodName">${data[i].foodName}</td>
+									<td id="userName">${data[i].userName}</td>
+									<td id="tel">${data[i].tel}</td>
+									<td id="price">${data[i].price}</td>
+									<td id="goodsNum">${data[i].goodsNum}</td>
+									<td id="kouwei">${data[i].kouwei}</td>
+									<td id="address">${data[i].address}</td>
+									<td><button id="delete">确认</button><button id="xiugai">取消</button></td>
+								</tr>`)
+				$('#forList').append(dataList)
+        	}
+        	
+        	
+        	
+		</script>
+	</body>
+</html>
