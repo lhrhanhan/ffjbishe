@@ -61,9 +61,6 @@
 					
 					<div class="content-active">
 						<button id="addRec">增加美食</button>
-					
-					
-					
 					</div>
 					
 					<div class="cm-table">
@@ -85,20 +82,12 @@
 							</table>
 						</div>
 					</div>
-					
-					
 				</div>
-				
-				
-				
-			
-			
 			</div>
+			
 			<div class="footer">
 				<div class="dis-form">
 					<p>增加美食</p>
-					<form method="get" onsubmit="return check()">
-					
 						<li class="re-df-list">
 							美食ID：<input id="re-bianhao" type="text" />
 						</li>
@@ -114,40 +103,81 @@
 							美食单价：<input id="re-date" type="text">
 						</li>
 						<li class="re-df-list">
-							美食信息：<input id="re-date" type="text">
+							美食信息：<input id="re-info" type="text">
 						</li>
 						<li class="re-df-list">
 							归属地区：<select id="re-func">
-										  <option value="前台餐桌">东北</option>
-										  <option value="前台打包">西北</option>
-										  <option value="前台打菜">华南</option>
-										  、<option value="前台餐桌">华北</option>
-										  <option value="前台打包">华中</option>
-										  <option value="前台打菜">西南</option>
-										  <option value="前台餐桌">西北</option>
-										  <option value="前台打包">港澳台</option>
-									
-										  
+										  <option value="东北">东北</option>
+										  <option value="西北">西北</option>
+										  <option value="华南">华南</option>
+										  、<option value="华北">华北</option>
+										  <option value="华中">华中</option>
+										  <option value="西南">西南</option>
+										  <option value="西北">西北</option>
+										  <option value="港澳台">港澳台</option>
+
 									</select>
 						</li>
 						<li class="re-df-list">
 							归属省份：<select id="re-sure">
-										  <option value="是">黑龙江</option>
-										  <option value="否">吉林</option>
-										  <option value="否">辽宁</option>
+										  <option value="黑龙江">黑龙江</option>
+										  <option value="吉林">吉林</option>
+										  <option value="辽宁">辽宁</option>
 									</select>
 						</li>
 						
 						<li class="sum">
 							<input id="sum" type="submit" value="提交"/>
 						</li>
-					</form>
 				</div>
 				<div class="ban"></div>
 				
 				
+				<div class="xg-dis">
+					<p>修改美食</p>
+						<li class="re-df-list ms-ID">
+							美食ID：
+						</li>
+						<li class="re-df-list">
+							美食名称：<input id="re-name" type="text" />
+						</li>
+						
+						<li class="re-df-list">
+							库存数量：<input id="re-pay" type="text">
+						</li>
+						
+						<li class="re-df-list">
+							美食单价：<input id="re-date" type="text">
+						</li>
+						<li class="re-df-list">
+							美食信息：<input id="re-info" type="text">
+						</li>
+						<li class="re-df-list">
+							归属地区：<select id="re-func">
+										  <option value="东北">东北</option>
+										  <option value="西北">西北</option>
+										  <option value="华南">华南</option>
+										  、<option value="华北">华北</option>
+										  <option value="华中">华中</option>
+										  <option value="西南">西南</option>
+										  <option value="西北">西北</option>
+										  <option value="港澳台">港澳台</option>
+
+									</select>
+						</li>
+						<li class="re-df-list">
+							归属省份：<select id="re-sure">
+										  <option value="黑龙江">黑龙江</option>
+										  <option value="吉林">吉林</option>
+										  <option value="辽宁">辽宁</option>
+									</select>
+						</li>
+						
+						<li class="sum">
+							<input id="sum" type="submit" value="修改"/>
+						</li>
+				</div>
 				
-			
 		</div>
 		
 		
@@ -190,26 +220,73 @@
         	{'foodID':'103','foodName':'马迭尔冰棍','price':'2','starkNum':'210','province':'黑龙江','area':'东北','foodInfo':'马迭尔冰棍是哈尔......'}
         	]
            	
+           	console.log(data instanceof Array)
+           	
          	for (var i in data) {
-         		console.log(data[i].foodID)
-         		var datalist = $(`<tr id="cmt-list">
-									<td>${data[i].foodID}</td>
+         		
+         		var datalist = $(`<tr class="cmt-list cmt-list${i}">
+									<td class="huoquID${i}">${data[i].foodID}</td>
 									<td>${data[i].foodName}</td>
 									<td>${data[i].price}</td>
-									<td id="info">${data[i].starkNum}</td>
+									<td class="info">${data[i].starkNum}</td>
 									<td>${data[i].foodInfo}</td>
 									<td>${data[i].province}</td>
 									<td>${data[i].area}</td>
-									<td><button id="delete">删除</button><button id="re-xg">修改</button></td>
-								</tr>`)
-         		
+									<td><button class="delete delete${i}">删除</button><button class="re-xg re-xg${i}">修改</button></td>
+								</tr>`)         		
          		$('#forList').append(datalist)
+         		
+         		$(`.delete`).click(function(){
+         			var xb = $('.delete').index($(this))
+         			console.log(xb)
+         			$(`.cmt-list${xb}`).hide()
+         		})
+         		
+         		$('.re-xg').click(function(){
+         			$('.ban').show()
+           			$('.xg-dis').show()
+           			var xj = $('.re-xg').index($(this))
+           			var xjZhi = $(`.huoquID${xj}`).text()
+           			$('.ms-ID').text(xjZhi+"(此项不能修改)")
+         		})
+         		
+         		$('.ban').click(function(){
+         			$('.xg-dis').hide()
+         		})
          	}
          	
-         	$('#delete').click(function() {
+         	
+         	
+         	
+         	
+         	
+         	$('#sum').click(function(){
+         		var bhID= $('#re-bianhao').val()
+         		var foodName = $('#re-name').val()
+         		var starkNum = $('#re-pay').val()
+         		var foodPrice = $('#re-date').val()
+         		var foodInfo = $('#re-info').val()
+         		var privince = $('#re-func').val()
+         		var foodArea = $('#re-sure').val()
          		
-         		$('#cmt-list').remove()
+         		
+         		$.ajax({
+         			type : 'get',
+         			url : '',
+         			data : `'bhID': ${bhID},'foodName':${foodName},'starkNum':${starkNum},'foodPrice':${foodPrice},'foodInfo':${foodInfo},'privince':${privince},'foodArea':${foodArea}`,
+         			success: function (data) {
+                        alert('添加成功')
+                    },
+                    error: function(XMLHttpRequest, textStatus, errorThrown) {
+                        alert(XMLHttpRequest.status);
+                        alert(XMLHttpRequest.readyState);
+                        alert(textStatus);
+                    }
+         		})
          	})
+         	
+         	
+         	
 		</script>
 	</body>
 </html>

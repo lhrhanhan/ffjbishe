@@ -217,3 +217,11 @@ a {
     display: none; 
 }
 
+.ci-box img {
+	width: 627px;
+	height: 420px;
+}
+
+.ci-box {
+	margin-top: 20px;
+}
